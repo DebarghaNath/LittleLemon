@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 function BookinghtmlForm(props){
-const [htmlFormData, sethtmlFormData] = useState({
+const [formData, setFormData] = useState({
        firstName:"",
        lastName:"",
        email:"",
@@ -16,30 +16,32 @@ const [htmlFormData, sethtmlFormData] = useState({
     function handleChange(e){
         const {name,value} = e.target;
 
-        sethtmlFormData((prev)=>({
+        setFormData((prev)=>({
             ...prev,
             [name]:value,
         }));
     }
     function handleDateChange(e){
         const {name,value}=e.target;
-        sethtmlFormData((prev)=>({
+        setFormData((prev)=>({
             ...prev,
             [name]:value,
         }));
-        props.dispatch({value});
-
+        props.dispatch({date:value});
     }
     useEffect(()=>{
-        console.log(htmlFormData)
-    },[htmlFormData]);
+        console.log(formData)
+    },[formData]);
 
+    function submitForm(e){
+        e.preventDefault();
+        props.submitForm(formData);
+    }
 return (
     <>
         <main>
             <section className="reservation-section">
-
-                <htmlForm className="reservation-container">
+                <form className="reservation-container" onSubmit={submitForm}>
                 <h1>Make A Booking</h1>
                 <div className="customer-header">
                     Customer Details
@@ -51,7 +53,7 @@ return (
                             type="text"
                             name="firstName"
                             className="input-field"
-                            value={htmlFormData.firstName}
+                            value={formData.firstName}
                             onChange={handleChange}
                         />
                     </div>
@@ -61,7 +63,7 @@ return (
                             type="text"
                             name="lastName"
                             className="input-field"
-                            value={htmlFormData.lastName}
+                            value={formData.lastName}
                             onChange={handleChange}
 
                         />
@@ -73,7 +75,7 @@ return (
                         type="email"
                         name="email"
                         className="input-field"
-                        value={htmlFormData.email}
+                        value={formData.email}
                         onChange={handleChange}
                     />
                 </div>
@@ -84,7 +86,7 @@ return (
                     <label htmlFor="guests" className="input-text">Guest Count</label>
                         <input type ="number" id="guests"className="input-field" min="1" max="10"
                         name="guests"
-                        value={htmlFormData.guests}
+                        value={formData.guests}
                         onChange={handleChange}>
                         </input>
                 </div>
@@ -93,7 +95,7 @@ return (
                         <label htmlFor="res-date" className="input-text">Choose date</label>
                         <input type="date" id="res-date" className="input-field"
                             name="date"
-                            value={htmlFormData.date}
+                            value={formData.date}
                             onChange={handleDateChange}
                         />
                     </div>
@@ -101,7 +103,7 @@ return (
                         <label htmlFor="res-time" className="input-text">Choose time</label>
                         <select id="res-time" className="input-field"
                         name="time"
-                        value={htmlFormData.time}
+                        value={formData.time}
                         onChange={handleChange}>
                             {props.state.map((time)=>{
                                 return(
@@ -118,7 +120,7 @@ return (
                         <label htmlFor="occasion" className="input-text">Occasion</label>
                         <select id="occasion-id" className="input-field"
                         name="occasion"
-                        value={htmlFormData}
+                        value={formData.occasion}
                         onChange={handleChange}>
                             <option></option>
                             <option>Birthday</option>
@@ -131,7 +133,7 @@ return (
                         <label htmlFor="seating" className="input-text">Seating arrangement</label>
                         <select id="seating-id"className="input-field"
                         name="seating"
-                        value={htmlFormData.seating}
+                        value={formData.seating}
                         onChange={handleChange}>
                             <option></option>
                             <option>ground floor</option>
@@ -144,14 +146,14 @@ return (
                 <div className="input-box">
                     <label htmlFor="comment" className="input-text">Special requirements..</label>
                     <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Type here..." className="input-field"
-                    value={htmlFormData.comment}
+                    value={formData.comment}
                     onChange={handleChange}>
                     </textarea>
                 </div>
                 <button type="submit" className="reservation-button">
                     Confirm Booking
                 </button>
-                </htmlForm>
+                </form>
             </section>
         </main>
     </>);
