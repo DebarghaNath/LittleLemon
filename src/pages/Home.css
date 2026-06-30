@@ -1,0 +1,119 @@
+@import url('https://googleapis.com');
+
+.about-section {
+    width: 100%;
+    background-color: #495e57;
+    padding: 5rem 0;
+}
+.about-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+}
+.about-section img{
+    width: 100%;
+    max-width: 500px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 16px;
+    justify-self: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+.about-section img:hover{
+    transform: translateY(-8px);
+    box-shadow: 0px 16px 32px rgba(255, 255, 255, 0.15);
+}
+.about-article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.about-article h1{
+    font-size: 3rem;
+    font-family: 'Karla';
+    margin-bottom: 1rem;
+    color: #F4cE14;
+    transition: text-shadow 0.3s ease-out;
+}
+.about-article h1:hover{
+    text-shadow: 0 0 10px #F4cE14;;
+}
+
+.about-article p{
+    font-size: 1.2rem;
+    font-family: 'Karla';
+    color: white;
+}
+.about-article button{
+    border: none;
+    background-color: #F4cE14;
+    color: black;
+    padding :0.9rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 16px;
+    font-weight: 700;
+    font-family: 'Karla';
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.about-article button:hover{
+    background-color: #ffe770;
+    transform: translateY(-2px);
+}
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d1d1d1;
+}
+.menu-showcase{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #d1d1d1;
+}
+.card-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1200px;
+    margin: 3rem auto 2rem;
+    padding: 0 2rem;
+}
+.card-title h1{
+    color: black;
+    font-size: 3rem;
+    font-family: 'Karla';
+    margin: 1rem 10rem;
+    color: #495e57;
+    transition: text-shadow 0.3s ease-out;
+}
+.card-title h1:hover{
+    text-shadow: 0 0 5px #495e57;
+}
+
+
+.card-title button{
+    border: none;
+    background-color: #F4cE14;
+    color: black;
+    padding :0.9rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 16px;
+    font-weight: 700;
+    font-family: 'Karla';
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.card-title button:hover{
+    background-color: #ffe770;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,27 @@
+@import url('https://googleapis.com');
+.navbar {
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 3rem;
+    background-color: #EDEFEE;
+}
+.navbar img {
+    height: 60px
+}
+.navbar ul{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+.nav-link{
+    text-decoration: none;
+    color: #495e57;
+    font-weight: 400;
+    font-size: 1.25rem;
+    font-family: 'Markazi Text';
+     transition: color 0.3s ease;
+}
+.nav-link:hover{
+    color:#ee9972
+}

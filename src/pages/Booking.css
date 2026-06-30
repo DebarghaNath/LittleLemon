@@ -1,0 +1,107 @@
+@import url('https://googleapis.com');
+
+.reservation-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #d1d1d1;
+}
+.reservation-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1024px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: #495e57;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.599);
+    transition: all 0.3s east;
+}
+.reservation-container:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.777);
+}
+.reservation-container h1 {
+    text-align: center;
+    color: #F4CE14;
+    font-family: "Markazi Text", serif;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.customer-header {
+    margin: 2rem 0 1.2rem;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid rgba(244,206,20,.35);
+
+    font-family: "Karla", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #F4CE14;
+}
+.customer-header{
+    display: flex;
+    font-family: 'Karla';
+
+    font-size: 1.4rem;
+    color: white;
+}
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.input-box{
+    display: flex;
+    flex-direction: column;
+}
+.input-text{
+    color: #F4cE14;
+    font-family: 'Karla';
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.input-field {
+    width:100%;
+    padding: 0.85rem 1rem;
+    border: 2px solid #e5e73b;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Karla';
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+.input-field:hover{
+    border-color: #d1d1d1;
+}
+.input-field:focus{
+    outline: none;
+    border-color: #495e57;
+    box-shadow: 0 0 0 4px rgba(73,94,87,0.15);
+}
+textarea.input-field {
+    min-height: 170px;
+    resize: vertical;
+    line-height: 1.6;
+}
+.reservation-button{
+    border: none;
+    background-color: #F4cE14;
+    color: black;
+    padding :0.9rem 2rem;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    border-radius: 16px;
+    font-weight: 700;
+    font-family: 'Karla';
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.reservation-button:hover{
+    background-color: #ffe770;
+    transform: translateY(-2px);
+}
